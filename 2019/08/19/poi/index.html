@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   <meta name="description" content="java poi实现病历数据的word导出1.实现的效果实现病人基本信息、多条病历数据、多项检查项图片的动态插入（网络图片），涉及技术包括word模板的使用、复制表格、复制行、插入图片的使用。 2.模板把word中的占位符替换为实际的值，注意WPFRun表示有相同属性的一段文本，所以模板里变量内容需要从左到右的顺序写，${name}，如果先写${},再添加内容，会拆分成几部分，不能正常使用，因此若">
-<meta name="keywords" content="java,vue,mysql">
+<meta name="keywords" content="java,poi">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java poi实现病历数据的word导出">
 <meta property="og:url" content="http://www.jynn.fun/2019/08/19/poi/index.html">
@@ -19,7 +19,7 @@
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://www.jynn.fun/image/poi/record.png">
 <meta property="og:image" content="http://www.jynn.fun/image/poi/template.png">
-<meta property="og:updated_time" content="2019-08-18T15:02:18.835Z">
+<meta property="og:updated_time" content="2019-08-18T15:55:44.119Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java poi实现病历数据的word导出">
 <meta name="twitter:description" content="java poi实现病历数据的word导出1.实现的效果实现病人基本信息、多条病历数据、多项检查项图片的动态插入（网络图片），涉及技术包括word模板的使用、复制表格、复制行、插入图片的使用。 2.模板把word中的占位符替换为实际的值，注意WPFRun表示有相同属性的一段文本，所以模板里变量内容需要从左到右的顺序写，${name}，如果先写${},再添加内容，会拆分成几部分，不能正常使用，因此若">
@@ -328,7 +328,33 @@
   <div class="article-info article-info-index">
     
     
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">poi</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
     
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/java//" class="article-tag-list-link color5">java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
     
 
@@ -542,6 +568,14 @@
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">poi</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
@@ -592,9 +626,9 @@
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="https://zhousiwei.gitee.io/ibooks/" target="_blank" class="search-title" title="记录工作和学习过程中的笔记：Java、前端开发、Hexo博客、聚合支付、Linux笔记、ElasticSearch、ELK日志分析">
+              <a href="/" target="_blank" class="search-title" title="记录工作和学习过程中的笔记：Java、前端开发、Hexo博客、聚合支付、Linux笔记、ElasticSearch、ELK日志分析">
                 
-                  <img src="https://zhousiwei.gitee.io/ibooks/favicon.ico">
+                  <i class="icon-link icon"></i>
                 
                 技术笔记
               </a>
