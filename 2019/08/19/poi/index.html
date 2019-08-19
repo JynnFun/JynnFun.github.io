@@ -9,20 +9,20 @@
   <title>java poi实现病历数据的word导出 | Jynn Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="java poi实现病历数据的word导出1.实现的效果实现病人基本信息、多条病历数据、多项检查项图片的动态插入（网络图片），涉及技术包括word模板的使用、复制表格、复制行、插入图片的使用。 2.模板把word中的占位符替换为实际的值，注意WPFRun表示有相同属性的一段文本，所以模板里变量内容需要从左到右的顺序写，${name}，如果先写${},再添加内容，会拆分成几部分，不能正常使用，因此若">
+  <meta name="description" content="java poi实现病历数据的word导出1.实现的效果实现病人基本信息、多条病历数据、多项检查项图片的动态插入（网络图片），涉及技术包括word模板的使用、复制表格、复制行、插入图片的使用。">
 <meta name="keywords" content="java,poi">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java poi实现病历数据的word导出">
 <meta property="og:url" content="http://www.jynn.fun/2019/08/19/poi/index.html">
 <meta property="og:site_name" content="Jynn Blog">
-<meta property="og:description" content="java poi实现病历数据的word导出1.实现的效果实现病人基本信息、多条病历数据、多项检查项图片的动态插入（网络图片），涉及技术包括word模板的使用、复制表格、复制行、插入图片的使用。 2.模板把word中的占位符替换为实际的值，注意WPFRun表示有相同属性的一段文本，所以模板里变量内容需要从左到右的顺序写，${name}，如果先写${},再添加内容，会拆分成几部分，不能正常使用，因此若">
+<meta property="og:description" content="java poi实现病历数据的word导出1.实现的效果实现病人基本信息、多条病历数据、多项检查项图片的动态插入（网络图片），涉及技术包括word模板的使用、复制表格、复制行、插入图片的使用。">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://www.jynn.fun/image/poi/record.png">
 <meta property="og:image" content="http://www.jynn.fun/image/poi/template.png">
-<meta property="og:updated_time" content="2019-08-18T15:55:44.119Z">
+<meta property="og:updated_time" content="2019-08-19T15:19:42.140Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java poi实现病历数据的word导出">
-<meta name="twitter:description" content="java poi实现病历数据的word导出1.实现的效果实现病人基本信息、多条病历数据、多项检查项图片的动态插入（网络图片），涉及技术包括word模板的使用、复制表格、复制行、插入图片的使用。 2.模板把word中的占位符替换为实际的值，注意WPFRun表示有相同属性的一段文本，所以模板里变量内容需要从左到右的顺序写，${name}，如果先写${},再添加内容，会拆分成几部分，不能正常使用，因此若">
+<meta name="twitter:description" content="java poi实现病历数据的word导出1.实现的效果实现病人基本信息、多条病历数据、多项检查项图片的动态插入（网络图片），涉及技术包括word模板的使用、复制表格、复制行、插入图片的使用。">
 <meta name="twitter:image" content="http://www.jynn.fun/image/poi/record.png">
   
     <link rel="alternative" href="/atom.xml" title="Jynn Blog" type="application/atom+xml">
@@ -66,9 +66,6 @@
 
 
 
-  
-    <script src="/lib/pace.min.js"></script>
-    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
   
 
 </head>
@@ -277,6 +274,7 @@
   <div class="article-entry" itemprop="articleBody">
     
     <h1 id="java-poi实现病历数据的word导出"><a href="#java-poi实现病历数据的word导出" class="headerlink" title="java poi实现病历数据的word导出"></a>java poi实现病历数据的word导出</h1><h2 id="1-实现的效果"><a href="#1-实现的效果" class="headerlink" title="1.实现的效果"></a>1.实现的效果</h2><pre><code>实现病人基本信息、多条病历数据、多项检查项图片的动态插入（网络图片），涉及技术包括word模板的使用、复制表格、复制行、插入图片的使用。</code></pre><p><img src="/image/poi/record.png" alt></p>
+<a id="more"></a>
 <h2 id="2-模板"><a href="#2-模板" class="headerlink" title="2.模板"></a>2.模板</h2><pre><code>把word中的占位符替换为实际的值，注意WPFRun表示有相同属性的一段文本，所以模板里变量内容需要从左到右的顺序写，${name}，如果先写${},再添加内容，会拆分成几部分，不能正常使用，因此若出现替换失败的情况，可以尝试手动修改占位符，不要偷懒直接复制。</code></pre><p><img src="/image/poi/template.png" alt></p>
 <h2 id="3-pom-xml中相关依赖"><a href="#3-pom-xml中相关依赖" class="headerlink" title="3.pom.xml中相关依赖"></a>3.pom.xml中相关依赖</h2><pre><code>包括poi和模板</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- poi --&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.apache.poi&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;poi-ooxml&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;3.15-beta2&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">&lt;!-- 模板 --&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">      &lt;groupId&gt;org.apache.poi&lt;/groupId&gt;</span><br><span class="line">      &lt;artifactId&gt;ooxml-schemas&lt;/artifactId&gt;</span><br><span class="line">      &lt;version&gt;1.1&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
 
@@ -790,7 +788,7 @@
 <script type="text/javascript" src="/plugins/activate-power-mode/activate-power-mode.js"></script>
 <script>
   POWERMODE.colorful = true; // make power mode colorful
-  POWERMODE.shake = true; // turn off shake
+  POWERMODE.shake = false; // turn off shake
   document.body.addEventListener('input', POWERMODE);
 
 </script>
